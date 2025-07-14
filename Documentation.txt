@@ -1,0 +1,81 @@
+==============================
+Authentication-System Project
+==============================
+
+Project: Full-stack authentication system using MERN + Next.js + TypeScript
+
+------------------------------
+🔐 SERVER-SIDE (Backend)
+------------------------------
+📁 Project Path: /auth-backend
+
+1. Initialization:
+   - Run: npm init -y
+
+2. Install dependencies:
+   - express, mongoose, bcrypt, jsonwebtoken, cors, dotenv
+   - dev: nodemon
+
+3. Create folders & purposes:
+   /controllers       => Handles route logic (register, login)
+   /routes            => Defines API endpoints
+   /models            => Mongoose schemas (User model)
+   /middleware        => Auth protection (JWT verify)
+   .env               => Stores secrets (Mongo URI, JWT secret)
+   server.js          => Entry point of server
+
+4. JWT Token:
+   - Signed on login/registration with expiry (7d)
+   - Sent to frontend for protected access
+
+5. User Password:
+   - Hashed before saving using bcrypt
+
+6. Run server:
+   - nodemon server.js
+
+------------------------------
+🌐 CLIENT-SIDE (Frontend)
+------------------------------
+📁 Project Path: /auth-frontend
+
+1. Create project:
+   - npx create-next-app@latest auth-frontend --typescript
+
+2. Install dependencies:
+   - axios, react-router-dom@6, react-icons
+   - tailwindcss@latest, postcss, autoprefixer
+
+3. Setup Tailwind CSS:
+   - Init config: npx tailwindcss init -p
+   - Configure paths in tailwind.config.ts
+   - Import in styles/globals.css
+
+4. Create folders & purposes:
+   /pages              => Main routes (login.tsx, register.tsx)
+   /components         => UI parts (Navbar, ProtectedRoute)
+   /utils              => Helper functions (token handler)
+   /styles             => Tailwind CSS imports
+
+5. Authentication Flow:
+   - Register/Login forms submit via axios to backend
+   - JWT stored in localStorage
+   - ProtectedRoute component checks token
+
+6. Run client:
+   - npm run dev
+
+------------------------------
+✅ GitHub
+------------------------------
+Repository: Authentication-System
+.gitignore: Included (ignores node_modules, .env, logs, build, IDE)
+
+------------------------------
+📌 Note
+------------------------------
+- Backend uses MongoDB (local or cloud)
+- Secure passwords via bcrypt
+- Token-based auth with JWT
+- Frontend styled with Tailwind CSS v4
+- Auth state managed via localStorage (optional: context/Zustand)

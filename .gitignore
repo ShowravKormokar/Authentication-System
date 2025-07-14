@@ -40,3 +40,7 @@ out/
 # Coverage
 coverage/
 *.lcov
+
+
+package.json
+package-lock.json

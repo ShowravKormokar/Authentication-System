@@ -40,3 +40,22 @@ const signUpSchema = new mongoose.Schema(
         }
     }
 );
+
+
+// Secure password using bcrypt
+signUpSchema.pre('save', async (next) => {
+    const user = this; // The current user document
+    if (!user.isModified('password', 'cPassword')) { // Avoid re-hashing if password already hashing during updates
+        next(); // Continue saving if no hashing needed
+    }
+
+    try {
+        const saltRounds = await bcrypt.genSalt(10); // Create random string (salt) added to the password
+        const hash_password = await bcrypt.hash(user.password, saltRounds);
+
+        user.password = hash_password;
+        user.cPassword = hash_password;
+    } catch (error) {
+        next(error);
+    }
+})

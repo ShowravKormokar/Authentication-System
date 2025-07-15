@@ -5,15 +5,15 @@ const getSignUpData = async (req, res) => {
     try {
         const getUserSignUp = await SignUp.find({});
 
-        if (!getSignUpData === 0) {
+        if (!getUserSignUp === 0) {
             res.status(404)({
                 message: "User not found."
             });
         } else {
             res.status(201)({
                 message: "Success",
-                length: getSignUpData.length,
-                users: getSignUpData
+                length: getUserSignUp.length,
+                users: getUserSignUp
             });
         }
     } catch (error) {

@@ -83,3 +83,7 @@ signUpSchema.methods.generateTokens = async () => {
         console.error(`JWT error from authModel. error: ${error}`);
     };
 };
+
+const SignUp = new mongoose.model('users', signUpSchema);
+
+module.exports = SignUp;

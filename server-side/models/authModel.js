@@ -58,4 +58,10 @@ signUpSchema.pre('save', async (next) => {
     } catch (error) {
         next(error);
     }
-})
+});
+
+
+// Compare password (When user sign in)
+signUpSchema.methods.comparePassword = async (password) => {
+    return bcrypt.compare(password, this.password);
+}

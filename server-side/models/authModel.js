@@ -64,4 +64,22 @@ signUpSchema.pre('save', async (next) => {
 // Compare password (When user sign in)
 signUpSchema.methods.comparePassword = async (password) => {
     return bcrypt.compare(password, this.password);
-}
+};
+
+// Create JWT web tokens
+signUpSchema.methods.generateTokens = async () => {
+    try {
+        return jwt.sign(
+            {
+                userId: this._id.toString(),
+                role: this.role
+            },
+            process.env.JWT_SECRET_KEY, // Verify the token by JWT secret key
+            {
+                expiresIn: "7d" // Set tokens validity
+            }
+        )
+    } catch (error) {
+        console.error(`JWT error from authModel. error: ${error}`);
+    };
+};

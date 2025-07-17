@@ -13,7 +13,7 @@ const signUpValidationSchema = z.object({
         .max(1024, { message: "Password can't be greater than 1024 characters" }),
 
     cPassword: z
-        .string({ required_error: "Confrim password must be required" })
+        .string({ required_error: "Confirm password must be required" })
         .min(6, { message: "Password must be at least 6 characters" })
         .max(1024, { message: "Password can't be greater than 1024 characters" }),
 
@@ -24,7 +24,7 @@ const signUpValidationSchema = z.object({
             if (password !== cPassword) {
                 ctx.addIssue({
                     code: "custom",
-                    message: "The password and confrimed passwored doesn't match!"
+                    message: "The password and confirmed password doesn't match!"
                 });
             }
         })

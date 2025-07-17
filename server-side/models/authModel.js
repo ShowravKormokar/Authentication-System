@@ -1,7 +1,7 @@
 require('dotenv').config();
 const mongoose = require('mongoose'); // For mongodb schema, model and queries
 const bcrypt = require('bcrypt'); // For hashing password securely
-const jwt = require('jsonwebtoken'); // To generate and verify jwts for user authentication
+const jwt = require('jsonwebtoken'); // To generate and verify JWT for user authentication
 
 // Create schema for sign up
 const signUpSchema = new mongoose.Schema(

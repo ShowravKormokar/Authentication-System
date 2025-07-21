@@ -9,3 +9,9 @@ const jwtAuthMiddleware = require('../middleware/jwtAuthMiddleware');
 router.get('/ping', (req, res) => {
     res.send("Pong!");
 });
+
+
+// register route
+router.route('/register').post(validate(signUpValidationSchema), authController.register);
+
+module.exports = router;

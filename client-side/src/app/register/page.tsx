@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import Link from 'next/link';
 import { useMutation } from '@tanstack/react-query';
+import { signup } from '@/lib/api';
 
 
 const register = () => {
@@ -22,7 +23,7 @@ const register = () => {
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setRegisterDatas({
             ...registerDatas,
-            [e.target.name]: [e.target.value]
+            [e.target.name]: e.target.value
         });// Set data
     };
 
@@ -30,6 +31,7 @@ const register = () => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
+        console.log(registerDatas);
         if (registerDatas.password == registerDatas.cPassword) {
             registerMutation.mutate();
         } else {
@@ -40,9 +42,9 @@ const register = () => {
 
     // Save user register data on database use React Query mutation
     const registerMutation = useMutation({
-        // mutationFn: () => signup(registerDatas.name, registerDatas.email, registerDatas.password, registerDatas.cPassword),
+        mutationFn: () => signup(registerDatas.name, registerDatas.email, registerDatas.password, registerDatas.cPassword),
         onSuccess: (data) => {
-            window.location.href = '/login';
+            window.location.href = '/';
         },
         onError: (err: any) => {
             setError(err.response?.data?.message || 'Registration failed')
@@ -59,6 +61,7 @@ const register = () => {
                         placeholder='Name'
                         name="name"
                         onChange={handleChange}
+                        value={registerDatas.name}
                         required
                         className='w-full border p-2 rounded mb-4'
                     />
@@ -67,6 +70,7 @@ const register = () => {
                         placeholder='Email'
                         name="email"
                         onChange={handleChange}
+                        value={registerDatas.email}
                         required
                         className='w-full border p-2 rounded mb-4'
                     />
@@ -75,6 +79,7 @@ const register = () => {
                         placeholder='Password'
                         name="password"
                         onChange={handleChange}
+                        value={registerDatas.password}
                         required
                         className='w-full border p-2 rounded mb-4'
                     />
@@ -83,6 +88,7 @@ const register = () => {
                         placeholder='Confirm Password'
                         name="cPassword"
                         onChange={handleChange}
+                        value={registerDatas.cPassword}
                         required
                         className='w-full border p-2 rounded mb-4'
                     />

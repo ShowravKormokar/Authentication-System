@@ -8,7 +8,7 @@ const validate = (schema) => async (req, res, next) => { // It takes ZOD schema 
     } catch (error) {
         res.status(400).json({
             message: "Validation error.",
-            error: error.message
+            error: error.errors,
         });
     }
 };

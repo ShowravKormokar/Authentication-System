@@ -9,20 +9,32 @@ require('./db/connection');
 const app = express();
 
 // Setup CORS to allow request from frontend/client-side
-const corsOptions = {
-    origin: "http://localhost:3000", // Request allow only these origin
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"], // only allow these HTTP methods,
-    allowedHeaders: ["Content-Type", "Authorization"], // only allow these headers,
-    credentials: true, // allow cookies or credentials if needed
-}
-app.use(cors(corsOptions));
+app.use(cors({
+    origin: (origin, callback) => {
+        const allowedOrigins = ["http://localhost:3000", "http://localhost:5173"];
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
+    credentials: true,
+}));
+
 
 app.use(express.json());
 
 // Test route
-app.get('/', (req, res) => {
-    res.send('API is running...');
+app.use((req, res, next) => {
+    console.log("Incoming Request:", req.method, req.url, req.headers['content-type']);
+    console.log("Body:", req.body);
+    next();
 });
+app.use((err, req, res, next) => {
+    console.error("Server Error:", err);
+    res.status(500).json({ message: "Internal Server Error", error: err.message });
+});
+
 
 // All routes
 app.use("/api/auth", authRouter);

@@ -45,6 +45,7 @@ const register = () => {
     const registerMutation = useMutation({
         mutationFn: () => signup(registerDatas.userName, registerDatas.email, registerDatas.password, registerDatas.cPassword, registerDatas.role),
         onSuccess: (data) => {
+            alert("Registration successful.");
             window.location.href = '/';
         },
         onError: (err: any) => {

@@ -1,48 +1,94 @@
-import React from 'react'
+'use client';
 
-const page = () => {
+import React, { useState } from 'react'
+import Link from 'next/link'
+
+const register = () => {
+
+    // Data handling variable
+    const [registerDatas, setRegisterDatas] = useState({
+        name: '',
+        email: '',
+        password: '',
+        cPassword: ''
+    });
+
+    // For handle/show error
+    const [error, setError] = useState<String | null>(null);
+
+    // Get input data
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setRegisterDatas({
+            ...registerDatas,
+            [e.target.name]: [e.target.value]
+        });// Set data
+    };
+
+    // Submit from data
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+
+        if (registerDatas.password == registerDatas.cPassword) {
+
+        } else {
+            setError("Password didn't match!");
+            return;
+        }
+
+    }
+
     return (
         <>
             <div className='flex justify-center items-center w-full h-[80vh] rounded-lg bg-gray-50'>
-                <form action="" className=' bg-white shadow-md rounded p-6 w-full max-w-md'>
+                <form onSubmit={handleSubmit} className=' bg-white shadow-md rounded p-6 w-full max-w-md'>
                     <h1 className="text-2xl font-bold mb-4 text-center">Register</h1>
                     <input
                         type="text"
                         placeholder='Name'
-                        name=""
+                        name="name"
+                        onChange={handleChange}
                         required
                         className='w-full border p-2 rounded mb-4'
                     />
                     <input
-                        type="text"
+                        type="email"
                         placeholder='Email'
-                        name=""
+                        name="email"
+                        onChange={handleChange}
                         required
                         className='w-full border p-2 rounded mb-4'
                     />
                     <input
-                        type="text"
+                        type="password"
                         placeholder='Password'
-                        name=""
+                        name="password"
+                        onChange={handleChange}
                         required
                         className='w-full border p-2 rounded mb-4'
                     />
                     <input
-                        type="text"
+                        type="password"
                         placeholder='Confirm Password'
-                        name=""
+                        name="cPassword"
+                        onChange={handleChange}
                         required
                         className='w-full border p-2 rounded mb-4'
                     />
                     <button
                         type="submit"
-                        className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">
+                        className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 cursor-pointer">
                         Register
                     </button>
+                    <p className="text-center text-sm text-gray-600 mt-4">
+                        Have an account?
+                        <Link href="/login" className="text-green-600 hover:underline ml-1">
+                            Log In
+                        </Link>
+                    </p>
                 </form>
             </div>
         </>
     )
 }
 
-export default page
+export default register

@@ -43,7 +43,10 @@ const register = () => {
         // mutationFn: () => signup(registerDatas.name, registerDatas.email, registerDatas.password, registerDatas.cPassword),
         onSuccess: (data) => {
             window.location.href = '/login';
-        }
+        },
+        onError: (err: any) => {
+            setError(err.response?.data?.message || 'Registration failed')
+        },
     })
 
     return (
@@ -83,6 +86,9 @@ const register = () => {
                         required
                         className='w-full border p-2 rounded mb-4'
                     />
+                    {/* Error */}
+                    {error && <p className="text-red-500 mb-3">{error}</p>}
+
                     <button
                         type="submit"
                         className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 cursor-pointer">

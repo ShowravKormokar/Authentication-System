@@ -10,10 +10,11 @@ const register = () => {
 
     // Data handling variable
     const [registerDatas, setRegisterDatas] = useState({
-        name: '',
+        userName: '',
         email: '',
         password: '',
-        cPassword: ''
+        cPassword: '',
+        role: 'user'
     });
 
     // For handle/show error
@@ -42,7 +43,7 @@ const register = () => {
 
     // Save user register data on database use React Query mutation
     const registerMutation = useMutation({
-        mutationFn: () => signup(registerDatas.name, registerDatas.email, registerDatas.password, registerDatas.cPassword),
+        mutationFn: () => signup(registerDatas.userName, registerDatas.email, registerDatas.password, registerDatas.cPassword, registerDatas.role),
         onSuccess: (data) => {
             window.location.href = '/';
         },
@@ -59,9 +60,9 @@ const register = () => {
                     <input
                         type="text"
                         placeholder='Name'
-                        name="name"
+                        name="userName"
                         onChange={handleChange}
-                        value={registerDatas.name}
+                        value={registerDatas.userName}
                         required
                         className='w-full border p-2 rounded mb-4'
                     />

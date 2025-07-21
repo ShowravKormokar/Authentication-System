@@ -1,7 +1,9 @@
 'use client';
 
 import React, { useState } from 'react'
-import Link from 'next/link'
+import Link from 'next/link';
+import { useMutation } from '@tanstack/react-query';
+
 
 const register = () => {
 
@@ -29,13 +31,20 @@ const register = () => {
         e.preventDefault();
 
         if (registerDatas.password == registerDatas.cPassword) {
-
+            registerMutation.mutate();
         } else {
             setError("Password didn't match!");
             return;
         }
+    };
 
-    }
+    // Save user register data on database use React Query mutation
+    const registerMutation = useMutation({
+        // mutationFn: () => signup(registerDatas.name, registerDatas.email, registerDatas.password, registerDatas.cPassword),
+        onSuccess: (data) => {
+            window.location.href = '/login';
+        }
+    })
 
     return (
         <>

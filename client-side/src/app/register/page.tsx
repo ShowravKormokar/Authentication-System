@@ -43,7 +43,7 @@ const register = () => {
 
     // Save user register data on database use React Query mutation
     const registerMutation = useMutation({
-        mutationFn: () => signup(registerDatas.userName, registerDatas.email, registerDatas.password, registerDatas.cPassword, registerDatas.role),
+        mutationFn: () => signup(registerDatas.userName.toLowerCase(), registerDatas.email, registerDatas.password, registerDatas.cPassword, registerDatas.role),
         onSuccess: (data) => {
             alert("Registration successful.");
             window.location.href = '/';

@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: 'Kugile';
+    src: url('../../../public/kugile/Kugile_Demo.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Kugile', sans-serif;
+}

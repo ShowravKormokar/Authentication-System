@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import "./styles/globals.css";
 import { useState, ReactNode } from 'react'
+import Navbar from "@/components/Navbar";
 
 // export const metadata: Metadata = {
 //   title: "Create Next App",
@@ -14,9 +15,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   const [queryClient] = useState(() => new QueryClient());
 
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" suppressHydrationWarning>
+      <body className="p-4 bg-[#010B13] text-cyan-50">
         <QueryClientProvider client={queryClient}>
+          <Navbar />
           <main className="p-4">{children}</main>
         </QueryClientProvider>
       </body>

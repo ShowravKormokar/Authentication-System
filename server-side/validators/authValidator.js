@@ -8,7 +8,6 @@ const signUpValidationSchema = z
     .object({
         userName: z
             .string({ required_error: "User name must be required." })
-            .trim()
             .regex(usernameRegex, { message: "Invalid user name. Only letters, numbers, and underscores allowed (3-20 chars)" }),
 
         email: z

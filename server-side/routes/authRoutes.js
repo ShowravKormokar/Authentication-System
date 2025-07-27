@@ -12,6 +12,7 @@ router.get('/ping', (req, res) => {
 
 
 // register route
-router.route('/register').post(validate(signUpValidationSchema), authController.register);
+// router.route('/register').post(validate(signUpValidationSchema), authController.register);
+router.post('/register', validate(signUpValidationSchema), authController.register);
 
 module.exports = router;

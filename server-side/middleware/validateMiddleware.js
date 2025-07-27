@@ -1,14 +1,22 @@
-// Custom Express middleware for request validation by using ZOD
-const validate = (schema) => async (req, res, next) => { // It takes ZOD schema as an argument and return a middleware function
+const validate = (schema) => async (req, res, next) => {
     try {
-        // If valid zod returns the parse body
         const parseBody = await schema.parseAsync(req.body);
         req.body = parseBody;
-        next(); // To move the controller (authController->register)
+        next();
     } catch (error) {
+        console.log('Zod validation error:', error); // Add this line
+
+        const errors = {};
+        if (error.issues) {
+            error.issues.forEach((issue) => {
+                const field = issue.path[0];
+                errors[field] = issue.message;
+            });
+        }
+
         res.status(400).json({
-            message: "Validation error.",
-            error: error.errors,
+            message: "Validation failed",
+            errors: errors
         });
     }
 };

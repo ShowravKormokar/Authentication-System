@@ -9,7 +9,6 @@ const signUpSchema = new mongoose.Schema(
         userName: {
             type: String,
             required: true,
-            trim: true,
             lowercase: true
         },
         email: {
@@ -43,10 +42,10 @@ const signUpSchema = new mongoose.Schema(
 
 
 // Secure password using bcrypt
-signUpSchema.pre('save', async (next) => {
+signUpSchema.pre('save', async function (next) {
     const user = this; // The current user document
     if (!user.isModified('password', 'cPassword')) { // Avoid re-hashing if password already hashing during updates
-        next(); // Continue saving if no hashing needed
+        return next(); // Continue saving if no hashing needed
     }
 
     try {
@@ -62,12 +61,12 @@ signUpSchema.pre('save', async (next) => {
 
 
 // Compare password (When user sign in)
-signUpSchema.methods.comparePassword = async (password) => {
+signUpSchema.methods.comparePassword = async function (password) {
     return bcrypt.compare(password, this.password);
 };
 
 // Create JWT web tokens
-signUpSchema.methods.generateTokens = async () => {
+signUpSchema.methods.generateToken = async () => {
     try {
         return jwt.sign(
             {

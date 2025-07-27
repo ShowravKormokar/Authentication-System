@@ -66,7 +66,7 @@ signUpSchema.methods.comparePassword = async function (password) {
 };
 
 // Create JWT web tokens
-signUpSchema.methods.generateToken = async () => {
+signUpSchema.methods.generateToken = async function () {
     try {
         return jwt.sign(
             {

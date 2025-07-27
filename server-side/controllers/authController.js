@@ -26,7 +26,7 @@ const getSignUpData = async (req, res) => {
 
 // Register a new user and return a JWT token upon success
 const register = async (req, res) => {
-    console.log(req.body);
+    console.log("From controller: ", req.body);
     try {
         const { userName, email, password, cPassword, role } = req.body; // Extract signup form data from client side
         // console.log(userName, email, password, cPassword, role);
@@ -84,7 +84,7 @@ const login = async (req, res) => {
 
         if (isPasswordMatch) {
             return res.status(200).json({
-                message: "Login successfull.",
+                message: "Login successful.",
                 token: await userExist.generateToken(),
                 user: {
                     userName: userExist.userName,

@@ -10,20 +10,15 @@ const api = axios.create({
 
 // ---- For Signup ----
 export const signup = async (userName: string, email: string, password: string, cPassword: string, role: string) => {
-    const res = await api.post('/api/auth/register', { userName, email, password, cPassword, role });
-    return res.data;
-    // const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:5000"}/api/auth/register`, {
-    //     method: "POST",
-    //     headers: {
-    //         "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({ userName, email, password, cPassword, role }),
-    // });
-    // if (!res.ok) {
-    //     const error = await res.json();
-    //     throw new Error(error.message || "Registration failed");
-    // }
-    // return res.json();
+    try {
+        const res = await api.post('/api/auth/register', { userName, email, password, cPassword, role });
+        return res.data;
+    } catch (error: any) {
+        // Properly extract the error data
+        const errorData = error.response?.data || { message: "Registration failed" };
+        //console.log('Error data to throw:', errorData);
+        throw errorData;
+    }
 };
 
 export default api;

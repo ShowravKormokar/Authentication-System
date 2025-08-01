@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import Link from 'next/link';
 import { useMutation } from '@tanstack/react-query';
 import { userLogin } from '@/lib/api'
-import { error } from 'console';
 
 const login = () => {
 
@@ -50,7 +49,9 @@ const login = () => {
     return (
         <div className='flex justify-center items-center w-full h-[80vh] rounded-lg '>
             <form onSubmit={handleSubmit} className=' bg-white/7 backdrop-blur-[20px] backdrop-saturate-[155%] rounded-xl p-6 w-full max-w-md border-2 border-[#0F172A]'>
-                <h1 className='text-2xl font-bold mb-4 text-center'>Welcome Back! Please, Login!</h1>
+                <h1 className="text-lg font-extrabold text-center mb-6">
+                    👋 Welcome Back! <br className="hidden sm:inline" /> Please, Login to Continue
+                </h1>
                 <input
                     type="email"
                     id='email'

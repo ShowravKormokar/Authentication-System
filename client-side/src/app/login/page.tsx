@@ -1,16 +1,42 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import Link from 'next/link';
 
 const login = () => {
+
+    // Data handling variable
+    const [loginDatas, setLoginDatas] = useState({
+        email: '',
+        password: ''
+    });
+
+    //For handle/show error
+    const [fieldErrors, setFieldErrors] = useState<{ [key: string]: string }>({});
+
+    //Get input data
+    const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setLoginDatas({
+            ...loginDatas,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    //Submit form data
+    const handleSubmit = (e: React.FormEvent) => {
+        alert(`Success! Email: ${loginDatas.email}, Password: ${loginDatas.password}`);
+    };
+
     return (
         <div className='flex justify-center items-center w-full h-[80vh] rounded-lg '>
-            <form action="" className=' bg-white/7 backdrop-blur-[20px] backdrop-saturate-[155%] rounded-xl p-6 w-full max-w-md border-2 border-[#0F172A]'>
+            <form onSubmit={handleSubmit} className=' bg-white/7 backdrop-blur-[20px] backdrop-saturate-[155%] rounded-xl p-6 w-full max-w-md border-2 border-[#0F172A]'>
                 <h1 className='text-2xl font-bold mb-4 text-center'>Welcome Back! Please, Login!</h1>
                 <input
                     type="email"
                     id='email'
                     name='email'
                     placeholder='Email'
+                    onChange={handleInput}
+                    value={loginDatas.email}
                     className='w-full p-2 rounded mb-3 bg-slate-900 border border-slate-700 text-cyan-50 focus:ring-2 focus:ring-cyan-500'
                 />
 
@@ -19,6 +45,8 @@ const login = () => {
                     id='password'
                     name='password'
                     placeholder='Password'
+                    onChange={handleInput}
+                    value={loginDatas.password}
                     className='w-full p-2 rounded bg-slate-900 border border-slate-700 text-cyan-50 focus:ring-2 focus:ring-cyan-500'
                 />
 

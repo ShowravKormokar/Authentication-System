@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Link from 'next/link';
 import { useMutation } from '@tanstack/react-query';
 import { userLogin } from '@/lib/api'
+import { error } from 'console';
 
 const login = () => {
 
@@ -13,7 +14,7 @@ const login = () => {
     });
 
     //For handle/show error
-    const [fieldErrors, setFieldErrors] = useState<{ [key: string]: string }>({});
+    const [error, setError] = useState<String | null>(null);
 
     //Get input data
     const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,8 +40,12 @@ const login = () => {
                 password: ''
             });
             window.location.href = ('/');
+        },
+        onError: (error: any) => {
+            console.log(error);
+            setError(error.message || "Login failed");
         }
-    })
+    });
 
     return (
         <div className='flex justify-center items-center w-full h-[80vh] rounded-lg '>
@@ -72,6 +77,10 @@ const login = () => {
                         Forget Password
                     </Link>
                 </p>
+
+                {error && (
+                    <p className="text-[#F59E0B] mb-3 text-sm">{error}</p>
+                )}
 
                 <button
                     type="submit"

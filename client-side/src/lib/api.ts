@@ -21,4 +21,15 @@ export const signup = async (userName: string, email: string, password: string, 
     }
 };
 
+// ---- For Login ----
+export const userLogin = async (email: string, password: string) => {
+    try {
+        const res = await api.post('/api/auth/login', { email, password });
+        return res.data;
+    } catch (error: any) {
+        const errorData = error.response?.data || { message: "Login failed" };
+        throw errorData;
+    }
+}
+
 export default api;

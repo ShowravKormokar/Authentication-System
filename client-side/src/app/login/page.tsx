@@ -1,6 +1,8 @@
 'use client'
 import React, { useState } from 'react'
 import Link from 'next/link';
+import { useMutation } from '@tanstack/react-query';
+import { userLogin } from '@/lib/api'
 
 const login = () => {
 
@@ -23,8 +25,22 @@ const login = () => {
 
     //Submit form data
     const handleSubmit = (e: React.FormEvent) => {
-        alert(`Success! Email: ${loginDatas.email}, Password: ${loginDatas.password}`);
+        // alert(`Success! Email: ${loginDatas.email}, Password: ${loginDatas.password}`);
+        e.preventDefault();
+        loginMutation.mutate();
     };
+
+    const loginMutation = useMutation({
+        mutationFn: () => userLogin(loginDatas.email, loginDatas.password),
+        onSuccess: (data) => {
+            alert("Login success");
+            setLoginDatas({
+                email: '',
+                password: ''
+            });
+            window.location.href = ('/');
+        }
+    })
 
     return (
         <div className='flex justify-center items-center w-full h-[80vh] rounded-lg '>

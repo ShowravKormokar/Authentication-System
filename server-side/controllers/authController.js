@@ -105,4 +105,30 @@ const login = async (req, res) => {
     }
 };
 
-module.exports = { getSignUpData, register, login };
+//Individual Profile info
+const individualProfileInfo = async (req, res) => {
+    try {
+        const { userId } = req.jwtPayload;
+
+        //Find profile details by ID
+        const profileDetails = await SignUp.findById(userId).select("_id email userName");
+
+        if (profileDetails) {
+            res.status(200).json({
+                message: "Success",
+                profileDetails
+            });
+        } else {
+            res.status(404).json({
+                message: "User not found"
+            });
+        }
+    } catch (error) {
+        res.status(500).json({
+            message: "Internal server error",
+            error: error.message
+        });
+    }
+};
+
+module.exports = { getSignUpData, register, login, individualProfileInfo };

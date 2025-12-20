@@ -2,7 +2,7 @@
 
 import type { Metadata } from "next";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import "./styles/globals.css";
+import "../app/styles/globals.css";
 import { useState, ReactNode } from 'react'
 import Navbar from "@/components/Navbar";
 

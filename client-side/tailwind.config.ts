@@ -1,13 +1,25 @@
-import type { Config } from 'tailwindcss'
-
-const config: Config = {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+    darkMode: ["class"],
     content: [
-        "./src/**/*.{js,ts,jsx,tsx}", // ensures Tailwind scans your project
+        './pages/**/*.{ts,tsx}',
+        './components/**/*.{ts,tsx}',
+        './app/**/*.{ts,tsx}',
+        './src/**/*.{ts,tsx}',
     ],
     theme: {
-        extend: {},
-    },
-    plugins: [],
-}
-
-export default config
+        extend: {
+            fontFamily: {
+                sans: ['Kugile', 'system-ui', 'sans-serif'],
+            },
+            borderRadius: {
+                lg: 'var(--radius)',
+                md: 'calc(var(--radius) - 2px)',
+                sm: 'calc(var(--radius) - 4px)',
+            },
+            colors: {
+                // Your color mappings here
+            }
+        }
+    }
+};

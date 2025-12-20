@@ -1,10 +1,16 @@
 'use client';
 
 import type { Metadata } from "next";
+import { Epilogue } from 'next/font/google';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import "../app/styles/globals.css";
+import "./globals.css";
 import { useState, ReactNode } from 'react'
 import Navbar from "@/components/Navbar";
+
+const epilogue = Epilogue({
+  variable: "--font-epilogue",
+  subsets: ["latin"],
+})
 
 // export const metadata: Metadata = {
 //   title: "Create Next App",
@@ -16,7 +22,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="p-4 bg-[#010B13] text-cyan-50">
+      <body className={`p-4 bg-[#010B13] text-cyan-50 ${epilogue.variable}`}>
         <QueryClientProvider client={queryClient}>
           <Navbar />
           <main className="p-4">{children}</main>

@@ -83,8 +83,8 @@ export default function Lab() {
                                 const progress = (wave + 1) / 2;
                                 setters[i](minX + progress * range);
 
-                                el.classList.toggle("text-white", i === closest);
-                                el.classList.toggle("text-[#4d4d4d]", i !== closest);
+                                el.classList.toggle("text-primary", i === closest);
+                                el.classList.toggle("text-[#aaa]", i !== closest);
                             });
                         }
                     });
@@ -96,7 +96,7 @@ export default function Lab() {
 
     return (
         <section ref={abContainerRef}>
-            <div className="h-[75vh]" />
+            <div className="h-[50vh]" />
 
             <div className="content-container flex flex-col gap-5 pb-24 text-[9vw] leading-none font-semibold lg:gap-16 lg:text-[4vw]">
                 {CONTENT_SECTION.map((group, i) => (
@@ -104,7 +104,7 @@ export default function Lab() {
                         {group.map((text, j) => (
                             <div
                                 key={j}
-                                className="animated-text w-max text-[#4d4d4d] transition-colors duration-150"
+                                className="animated-text w-max transition-colors duration-150"
                             >
                                 {text}
                             </div>

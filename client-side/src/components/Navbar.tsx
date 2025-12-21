@@ -6,7 +6,7 @@ import MobileMenu from './MobileMenu';
 
 const Navbar = () => {
     return (
-        <nav className="w-full flex items-center justify-between p-4 fixed top-0 left-0 right-0 z-50 backdrop-blur-sm uppercase">
+        <nav className="w-full flex items-center justify-between p-3 lg:p-4 fixed top-0 left-0 right-0 z-50 backdrop-blur-sm uppercase">
 
             {/* Left icon */}
             <RiAddLine className="text-foreground hidden md:inline-block" />
@@ -29,36 +29,45 @@ const Navbar = () => {
                 <Link
                     href="/"
                     className="text-foreground px-2 font-semibold nav-Link"
-                    title="home"
+                    title="Index Page"
                 >
                     Index
                 </Link>
                 <RiAddLine className="text-foreground" />
 
                 <Link
-                    href="/About"
+                    href="/Docs"
                     className="text-foreground px-2 font-semibold nav-Link"
-                    title="about"
+                    title="Documents"
                 >
                     docs
                 </Link>
                 <RiAddLine className="text-foreground" />
 
                 <Link
-                    href="/contact"
+                    href="/APIs"
                     className="text-foreground px-2 font-semibold nav-Link"
-                    title="contact"
+                    title="API references"
                 >
                     API's
                 </Link>
                 <RiAddLine className="text-foreground" />
 
                 <Link
-                    href="/contact"
+                    href="/Lab"
                     className="text-foreground px-2 font-semibold nav-Link"
-                    title="contact"
+                    title="Lab Exp."
                 >
                     lab
+                </Link>
+                <RiAddLine className="text-foreground" />
+
+                <Link
+                    href="/register"
+                    className="text-foreground px-2 font-semibold border-2 hover:border-2 hover:border-foreground"
+                    title="register"
+                >
+                    SignUp
                 </Link>
             </div>
 

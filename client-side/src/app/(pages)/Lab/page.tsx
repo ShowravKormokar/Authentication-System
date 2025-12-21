@@ -15,7 +15,7 @@ const CONTENT_SECTION = [
     ["HARMONY", "SEAMLESS"]
 ];
 
-export default function About() {
+export default function Lab() {
     const abContainerRef = useRef<HTMLDivElement>(null);
 
     useGSAP(

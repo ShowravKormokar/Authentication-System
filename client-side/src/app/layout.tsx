@@ -43,11 +43,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`p-4 bg-secondary text-foreground ${epilogue.variable} ${cc.variable}`}>
-        {/* <QueryClientProvider client={queryClient}> */}
-        {/* <NoiseBackground /> */}
         <Navbar />
+        <QueryClientProvider client={queryClient}>
+        {/* <NoiseBackground /> */}
         <main className="p-4">{children}</main>
-        {/* </QueryClientProvider> */}
+        </QueryClientProvider>
       </body>
     </html>
   );

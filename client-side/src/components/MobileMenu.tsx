@@ -32,11 +32,7 @@ export default function MobileMenu() {
 
             {/* Sliding Panel */}
             <aside
-                className={`fixed top-0 right-0 h-screen w-screen bg-background shadow-xl
-    transform transition-transform duration-300 ease-in-out
-    lg:hidden z-50
-    ${open ? 'translate-x-0' : 'translate-x-full'}
-  `}
+                className={`fixed top-0 right-0 h-screen w-screen bg-background shadow-xl    transform transition-transform duration-300 ease-in-out lg:hidden z-50 ${open ? 'translate-x-0' : 'translate-x-full'} `}
             >
                 {/* Header */}
                 <div className="flex items-center justify-between p-4 border-b">
@@ -49,9 +45,9 @@ export default function MobileMenu() {
                 {/* Links */}
                 <nav className="flex flex-col gap-4 p-4">
                     <NavLink href="/" label="Index" onClick={() => setOpen(false)} />
-                    <NavLink href="/about" label="Docs" onClick={() => setOpen(false)} />
-                    <NavLink href="/contact" label="API's" onClick={() => setOpen(false)} />
-                    <NavLink href="/lab" label="Lab" onClick={() => setOpen(false)} />
+                    <NavLink href="/Docs" label="Docs" onClick={() => setOpen(false)} />
+                    <NavLink href="/APIs" label="API's" onClick={() => setOpen(false)} />
+                    <NavLink href="/Lab" label="Lab" onClick={() => setOpen(false)} />
                 </nav>
             </aside>
         </>

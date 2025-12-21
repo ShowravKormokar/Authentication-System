@@ -216,3 +216,32 @@ nav {
     font-family: var(--font-courier), monospace;
     font-size: 0.85rem;
 }
+
+.logo{
+    font-size: 1rem;
+}
+
+.nav-Link {
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.nav-Link:not(.logo .nav-Link)::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.nav-Link:not(.logo .nav-Link):hover::after {
+    transform: scaleX(1);
+}

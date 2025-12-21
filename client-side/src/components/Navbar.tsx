@@ -8,14 +8,14 @@ const Navbar = () => {
         <nav className="w-full flex items-center justify-between p-4 fixed top-0 left-0 right-0 z-50 backdrop-blur-sm uppercase">
 
             {/* Left icon */}
-            <RiAddLine className="text-foreground" />
+            <RiAddLine className="text-foreground hidden md:inline-block" />
 
             {/* Center logo with decorative icons */}
             <div className="logo flex items-center gap-2">
                 <RiCloseLine className="text-foreground" />
                 <Link
                     href="/"
-                    className="text-primary font-semibold"
+                    className="text-primary font-semibold nav-Link"
                     title="Home"
                 >
                     jwt※GSAP
@@ -27,7 +27,7 @@ const Navbar = () => {
             <div className="nav-items flex items-center gap-2 ">
                 <Link
                     href="/"
-                    className="text-foreground px-2 font-semibold"
+                    className="text-foreground px-2 font-semibold nav-Link"
                     title="home"
                 >
                     Index
@@ -36,7 +36,7 @@ const Navbar = () => {
 
                 <Link
                     href="/About"
-                    className="text-foreground px-2 font-semibold"
+                    className="text-foreground px-2 font-semibold nav-Link"
                     title="about"
                 >
                     docs
@@ -45,7 +45,7 @@ const Navbar = () => {
 
                 <Link
                     href="/contact"
-                    className="text-foreground px-2 font-semibold"
+                    className="text-foreground px-2 font-semibold nav-Link"
                     title="contact"
                 >
                     API's
@@ -54,7 +54,7 @@ const Navbar = () => {
 
                 <Link
                     href="/contact"
-                    className="text-foreground px-2 font-semibold"
+                    className="text-foreground px-2 font-semibold nav-Link"
                     title="contact"
                 >
                     lab
@@ -62,7 +62,7 @@ const Navbar = () => {
             </div>
 
             {/* Right icon */}
-            <RiAddLine className="text-foreground" />
+            <RiAddLine className="text-foreground hidden md:inline-block" />
         </nav>
     )
 };

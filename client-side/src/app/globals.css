@@ -7,7 +7,7 @@
 /* Kugile font */
 @font-face {
     font-family: 'Kugile';
-    src: url('../../public/kugile/Kugile_Demo.ttf') format('truetype');
+    src: url('../../public/fonts/RMMono-Regular.woff2') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;

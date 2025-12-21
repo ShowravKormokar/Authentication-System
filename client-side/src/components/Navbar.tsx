@@ -1,22 +1,70 @@
 'use client'
 import React from 'react'
 import Link from 'next/link'
+import { RiHeartFill, RiAddLine, RiCloseLine } from "@remixicon/react";
 
 const Navbar = () => {
-  return (
-    <div className='w-auto flex items-center justify-between p-2 fixed top-0 left-0 right-0 z-50'>
-      <div className='px-2'>
-        <h1 className='text-xl'>JWT</h1>
-      </div>
-      <div className=' px-3 py-2 text-center backdrop-blur-[20px] backdrop-saturate-155 bg-white/7 rounded-md border-white/10 hover:shadow-[0_0_2px_rgba(6,182,212,0.7)]'>
-        <ul className="flex flex-col text-sm md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-center">
-          <li><Link href="/" className="text-[#0EA5E9] hover:text-gray-300">Home</Link></li>
-          <li><Link href="/About" className="text-[#0EA5E9] hover:text-gray-300">About</Link></li>
-          <li><Link href="/register" className="text-[#0EA5E9] hover:text-gray-300">Account</Link></li>
-        </ul>
-      </div>
-    </div>
-  )
-}
+    return (
+        <nav className="w-full flex items-center justify-between p-4 fixed top-0 left-0 right-0 z-50 backdrop-blur-sm uppercase">
+
+            {/* Left icon */}
+            <RiAddLine className="text-foreground" />
+
+            {/* Center logo with decorative icons */}
+            <div className="logo flex items-center gap-2">
+                <RiCloseLine className="text-foreground" />
+                <Link
+                    href="/"
+                    className="text-primary font-semibold"
+                    title="Home"
+                >
+                    jwt※GSAP
+                </Link>
+                <RiCloseLine className="text-foreground" />
+            </div>
+
+            {/* Navigation items with dividers */}
+            <div className="nav-items flex items-center gap-2 ">
+                <Link
+                    href="/"
+                    className="text-foreground px-2 font-semibold"
+                    title="home"
+                >
+                    Index
+                </Link>
+                <RiAddLine className="text-foreground" />
+
+                <Link
+                    href="/About"
+                    className="text-foreground px-2 font-semibold"
+                    title="about"
+                >
+                    docs
+                </Link>
+                <RiAddLine className="text-foreground" />
+
+                <Link
+                    href="/contact"
+                    className="text-foreground px-2 font-semibold"
+                    title="contact"
+                >
+                    API's
+                </Link>
+                <RiAddLine className="text-foreground" />
+
+                <Link
+                    href="/contact"
+                    className="text-foreground px-2 font-semibold"
+                    title="contact"
+                >
+                    lab
+                </Link>
+            </div>
+
+            {/* Right icon */}
+            <RiAddLine className="text-foreground" />
+        </nav>
+    )
+};
 
 export default Navbar;

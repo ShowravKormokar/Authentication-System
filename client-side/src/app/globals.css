@@ -209,3 +209,10 @@
         @apply bg-muted-foreground/30;
     }
 }
+
+
+/* --------------------- */
+nav {
+    font-family: var(--font-courier), monospace;
+    font-size: 0.85rem;
+}

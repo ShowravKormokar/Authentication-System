@@ -2,6 +2,7 @@
 
 import type { Metadata } from "next";
 import { Epilogue } from 'next/font/google';
+import localFont from 'next/font/local';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import "./globals.css";
 import { useState, ReactNode } from 'react'
@@ -11,7 +12,25 @@ import NoiseBackground from "@/components/layout/NoiseBackground";
 const epilogue = Epilogue({
   variable: "--font-epilogue",
   subsets: ["latin"],
-})
+});
+
+const cc = localFont({
+  src: [
+    {
+      path: '../../public/fonts/CourierPrime-Regular.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/CourierPrime-Bold.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-courier',
+});
+
+
 
 // export const metadata: Metadata = {
 //   title: "Create Next App",
@@ -23,9 +42,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`p-4 bg-[#010B13] text-cyan-50 ${epilogue.variable}`}>
+      <body className={`p-4 bg-secondary text-foreground ${epilogue.variable} ${cc.variable}`}>
         {/* <QueryClientProvider client={queryClient}> */}
-        <NoiseBackground />
+        {/* <NoiseBackground /> */}
         <Navbar />
         <main className="p-4">{children}</main>
         {/* </QueryClientProvider> */}

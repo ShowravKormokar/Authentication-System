@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import "./globals.css";
 import { useState, ReactNode } from 'react'
 import Navbar from "@/components/Navbar";
+import NoiseBackground from "@/components/layout/NoiseBackground";
 
 const epilogue = Epilogue({
   variable: "--font-epilogue",
@@ -23,10 +24,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`p-4 bg-[#010B13] text-cyan-50 ${epilogue.variable}`}>
-        <QueryClientProvider client={queryClient}>
-          <Navbar />
-          <main className="p-4">{children}</main>
-        </QueryClientProvider>
+        {/* <QueryClientProvider client={queryClient}> */}
+        <NoiseBackground />
+        <Navbar />
+        <main className="p-4">{children}</main>
+        {/* </QueryClientProvider> */}
       </body>
     </html>
   );

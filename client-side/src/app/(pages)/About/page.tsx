@@ -41,7 +41,7 @@ export default function About() {
 
                     const setters = texts.map(text =>
                         gsap.quickTo(text, "x", {
-                            duration: 0.6,
+                            duration: 0.75,
                             ease: "power4.out"
                         })
                     );

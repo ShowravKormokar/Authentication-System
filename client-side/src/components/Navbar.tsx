@@ -1,7 +1,8 @@
 'use client'
 import React from 'react'
 import Link from 'next/link'
-import { RiHeartFill, RiAddLine, RiCloseLine } from "@remixicon/react";
+import { RiHeartFill, RiAddLine, RiCloseLine, RiMenu3Line } from "@remixicon/react";
+import MobileMenu from './MobileMenu';
 
 const Navbar = () => {
     return (
@@ -24,7 +25,7 @@ const Navbar = () => {
             </div>
 
             {/* Navigation items with dividers */}
-            <div className="nav-items flex items-center gap-2 ">
+            <div className="nav-items lg:flex items-center gap-2 hidden">
                 <Link
                     href="/"
                     className="text-foreground px-2 font-semibold nav-Link"
@@ -59,6 +60,11 @@ const Navbar = () => {
                 >
                     lab
                 </Link>
+            </div>
+
+            {/* Mobile menu */}
+            <div className='lg:hidden'>
+                <MobileMenu />
             </div>
 
             {/* Right icon */}

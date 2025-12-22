@@ -186,3 +186,11 @@ nav {
   position: relative;
   text-decoration: none;
 }
+
+.hero-text{
+  clip-path: inset(0% 0% 0% 0%);
+}
+/* -------------------- */
+.tranblock {
+  will-change: transform;
+}

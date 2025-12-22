@@ -4,6 +4,7 @@ import "./globals.css";
 import Providers, { ThemeProvider } from "./providers";
 import Navbar from "@/components/layouts/Navbar";
 import { Footer } from "@/components/layouts/Footer";
+import TransitionProvider from "@/providers/TransitionProvider";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -28,6 +29,7 @@ export default function RootLayout({
     return (
         <html lang="en" suppressHydrationWarning>
             <body className="antialiased">
+                <TransitionProvider />
                 <ThemeProvider
                     attribute="class"
                     defaultTheme="system"

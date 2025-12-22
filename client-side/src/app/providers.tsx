@@ -18,7 +18,7 @@ export default function Providers({ children }: { children: ReactNode }) {
         smoother.current = ScrollSmoother.create({
             wrapper: '#smooth-wrapper',
             content: '#smooth-content',
-            smooth: 1.2,
+            smooth: 2,
             effects: true,
             normalizeScroll: false,
         });

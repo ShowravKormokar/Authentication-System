@@ -7,7 +7,7 @@ import { ModeToggle } from './ModeToggle';
 
 const Navbar = () => {
     return (
-        <nav className="w-full flex items-center justify-between p-3 lg:p-4 fixed top-0 left-0 right-0 z-50 backdrop-blur-sm uppercase">
+        <nav className="w-full flex items-center justify-between p-3 lg:p-4 fixed top-0 left-0 right-0 z-50 backdrop-blur-lg uppercase">
 
             {/* Left icon */}
             <RiAddLine className="text-foreground hidden md:inline-block" />

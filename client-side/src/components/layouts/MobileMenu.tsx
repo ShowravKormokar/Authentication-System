@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { RiMenu3Line, RiCloseLine, RiAddLine } from 'react-icons/ri';
+import { RiMenu3Line, RiCloseLine, RiAddLine } from '@remixicon/react';
+import { ModeToggle } from './ModeToggle';
 
 export default function MobileMenu() {
     const [open, setOpen] = useState(false);
@@ -37,17 +38,20 @@ export default function MobileMenu() {
                 {/* Header */}
                 <div className="flex items-center justify-between p-4 border-b">
                     <span className="font-semibold text-lg">Menu</span>
-                    <button title='menu' onClick={() => setOpen(false)}>
-                        <RiCloseLine className="text-foreground text-2xl" />
-                    </button>
+                    <div className="flex items-center justify-center gap-5">
+                        <ModeToggle />
+                        <button title='menu' onClick={() => setOpen(false)}>
+                            <RiCloseLine className="text-foreground text-2xl" />
+                        </button>
+                    </div>
                 </div>
 
                 {/* Links */}
                 <nav className="flex flex-col gap-4 p-4">
                     <NavLink href="/" label="Index" onClick={() => setOpen(false)} />
-                    <NavLink href="/Docs" label="Docs" onClick={() => setOpen(false)} />
-                    <NavLink href="/APIs" label="API's" onClick={() => setOpen(false)} />
-                    <NavLink href="/Lab" label="Lab" onClick={() => setOpen(false)} />
+                    <NavLink href="/docs" label="Docs" onClick={() => setOpen(false)} />
+                    <NavLink href="/apis" label="API's" onClick={() => setOpen(false)} />
+                    <NavLink href="/lab" label="Lab" onClick={() => setOpen(false)} />
                 </nav>
             </aside>
         </>

@@ -26,17 +26,18 @@ const BounceText = ({ text }: { text: string }) => {
             scrollTrigger: {
                 trigger: containerRef.current,
                 start: "top top",
-                end: "bottom bottom",
+                end: "bottom 30%",
                 scrub: 1,
                 pin: containerRef.current,
                 pinSpacing: false,
-                invalidateOnRefresh: true
+                invalidateOnRefresh: true,
+                // markers: true
             }
         });
 
         gsap.set(splitText.chars, {
-            yPercent: "random(-250, 250)",
-            rotation: "random(-30, 30)"
+            yPercent: () => gsap.utils.random(-250, 250),
+            rotation: () => gsap.utils.random(-30, 30),
         });
 
         tl.to(titleRef.current, {
@@ -62,8 +63,8 @@ const BounceText = ({ text }: { text: string }) => {
     );
 
     return (
-        <section ref={containerRef} className="relative h-[300vh]">
-            <div className="relative flex h-screen items-center overflow-hidden">
+        <section className="relative w-screen h-[170vh]">
+            <div ref={containerRef} className="relative flex h-screen items-center overflow-hidden">
                 <h1 ref={titleRef} className="text-[14.2vw] font-bold whitespace-nowrap will-change-transform lg:text-[9vw]">{text}</h1>
                 <div className="absolute bottom-24 flex w-full justify-center text-center">
                     <p className="px-5 text-center text-xl lg:max-w-[50vw]">

@@ -3,6 +3,7 @@ import React from 'react'
 import Link from 'next/link'
 import { RiHeartFill, RiAddLine, RiCloseLine, RiMenu3Line } from "@remixicon/react";
 import MobileMenu from './MobileMenu';
+import { ModeToggle } from './ModeToggle';
 
 const Navbar = () => {
     return (
@@ -36,7 +37,7 @@ const Navbar = () => {
                 <RiAddLine className="text-foreground" />
 
                 <Link
-                    href="/Docs"
+                    href="/docs"
                     className="text-foreground px-2 font-semibold nav-Link"
                     title="Documents"
                 >
@@ -45,7 +46,7 @@ const Navbar = () => {
                 <RiAddLine className="text-foreground" />
 
                 <Link
-                    href="/APIs"
+                    href="/apis"
                     className="text-foreground px-2 font-semibold nav-Link"
                     title="API references"
                 >
@@ -54,7 +55,7 @@ const Navbar = () => {
                 <RiAddLine className="text-foreground" />
 
                 <Link
-                    href="/Lab"
+                    href="/lab"
                     className="text-foreground px-2 font-semibold nav-Link"
                     title="Lab Exp."
                 >
@@ -69,6 +70,7 @@ const Navbar = () => {
                 >
                     SignUp
                 </Link>
+                <ModeToggle />
             </div>
 
             {/* Mobile menu */}

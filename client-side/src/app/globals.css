@@ -129,19 +129,19 @@
   /* Scrollbar styling */
   ::-webkit-scrollbar {
     width: 5px;
-    height: 10px;
+    height: 5px;
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-muted;
+    @apply bg-primary;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-border rounded-full;
+    @apply bg-secondary rounded-full;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-muted-foreground/30;
+    @apply bg-ring;
   }
 }
 

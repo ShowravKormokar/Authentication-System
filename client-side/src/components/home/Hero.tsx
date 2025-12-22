@@ -50,10 +50,10 @@ const Hero = () => {
             <div className="w-full flex flex-col-reverse lg:flex-row items-center justify-between overflow-hidden">
                 {/* Text */}
                 <h1 className="font-extrabold uppercase tracking-tighter text-center lg:text-left">
-                    <span className="block text-4xl lg:text-[10vw] hero-text leading-[0.85]">
+                    <span className="block text-5xl lg:text-[10vw] hero-text leading-[0.85]">
                         Security
                     </span>
-                    <span className="block text-5xl lg:text-[13vw] hero-text leading-[0.85]">
+                    <span className="block text-6xl lg:text-[13vw] hero-text leading-[0.85]">
                         Monster
                     </span>
                 </h1>
@@ -69,10 +69,10 @@ const Hero = () => {
 
                 {/* Text */}
                 <h1 className="font-extrabold uppercase tracking-tighter text-center lg:text-right">
-                    <span className="block text-5xl lg:text-[13vw] hero-text2 leading-[0.85]">
+                    <span className="block text-6xl lg:text-[13vw] hero-text2 leading-[0.85]">
                         Wonder
                     </span>
-                    <span className="block text-4xl lg:text-[10vw] hero-text2 leading-[0.85]">
+                    <span className="block text-5xl lg:text-[10vw] hero-text2 leading-[0.85]">
                         Animation
                     </span>
                 </h1>

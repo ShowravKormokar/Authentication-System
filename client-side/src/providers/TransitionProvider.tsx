@@ -3,6 +3,7 @@
 import { TransitionRouter } from "next-transition-router";
 import gsap from "gsap";
 import { useRef, useEffect } from "react";
+import { RiAddLine, RiCloseLine } from "@remixicon/react";
 
 export default function TransitionProvider({ children }: { children?: React.ReactNode }) {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -62,16 +63,16 @@ export default function TransitionProvider({ children }: { children?: React.Reac
                     {Array.from({ length: 5 }).map((_, i) => (
                         <div
                             key={`top-${i}`}
-                            className="tranblock flex-1 bg-black origin-top"
-                        />
+                            className="tranblock flex-1 bg-black origin-top flex justify-center pt-10"
+                        ><RiAddLine className="text-white w-10 h-10" /></div>
                     ))}
                 </div>
                 <div className="flex flex-1 -mx-[0.5px] gap-0">
                     {Array.from({ length: 5 }).map((_, i) => (
                         <div
                             key={`bottom-${i}`}
-                            className="tranblock block2 flex-1 bg-black origin-bottom"
-                        />
+                            className="tranblock block2 flex-1 bg-black origin-bottom flex justify-center items-end pb-10"
+                        ><RiCloseLine className="text-white w-10 h-10" /></div>
                     ))}
                 </div>
             </div>

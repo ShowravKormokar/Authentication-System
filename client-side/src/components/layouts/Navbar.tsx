@@ -26,7 +26,7 @@ const Navbar = () => {
             </div>
 
             {/* Navigation items with dividers */}
-            <div className="nav-items lg:flex items-center gap-2 hidden">
+            <div className="nav-items lg:flex items-center gap-1 hidden">
                 <Link
                     href="/"
                     className="text-foreground px-2 font-semibold nav-Link"
@@ -65,11 +65,12 @@ const Navbar = () => {
 
                 <Link
                     href="/register"
-                    className="text-foreground px-2 font-semibold border-2 hover:border-2 hover:border-foreground"
+                    className="text-foreground px-2 font-semibold nav-Link"
                     title="register"
                 >
                     SignUp
                 </Link>
+                <RiAddLine className="text-foreground" />
                 <ModeToggle />
             </div>
 

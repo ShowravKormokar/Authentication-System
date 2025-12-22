@@ -37,7 +37,7 @@ export default function Lab() {
                     const minX = isDesktop ? 192 : 0;
                     const maxX = isDesktop ? 511 : 150;
                     const range = maxX - minX;
-                    const waveNumber = 0.5;
+                    const waveNumber = 0.9;
 
                     const setters = texts.map(text =>
                         gsap.quickTo(text, "x", {
@@ -83,7 +83,7 @@ export default function Lab() {
                                 const progress = (wave + 1) / 2;
                                 setters[i](minX + progress * range);
 
-                                el.classList.toggle("text-primary", i === closest);
+                                el.classList.toggle("text-destructive", i === closest);
                                 el.classList.toggle("text-[#aaa]", i !== closest);
                             });
                         }
@@ -98,7 +98,7 @@ export default function Lab() {
         <section ref={abContainerRef}>
             <div className="h-[50vh]" />
 
-            <div className="content-container flex flex-col gap-5 pb-24 text-[9vw] leading-none font-semibold lg:gap-16 lg:text-[4vw]">
+            <div className="content-container flex flex-col gap-5 pb-24 text-[9vw] leading-none font-semibold lg:gap-16 lg:text-[6vw]">
                 {CONTENT_SECTION.map((group, i) => (
                     <div key={i}>
                         {group.map((text, j) => (

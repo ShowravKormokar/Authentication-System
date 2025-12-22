@@ -4,8 +4,21 @@ import Link from 'next/link'
 import { RiHeartFill, RiAddLine, RiCloseLine, RiMenu3Line } from "@remixicon/react";
 import MobileMenu from './MobileMenu';
 import { ModeToggle } from './ModeToggle';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 const Navbar = () => {
+
+    useGSAP(() => {
+        gsap.from("nav", {
+            yPercent: -100,
+            opacity: 1,
+            delay: 0.7,
+            duration: 0.5,
+            ease: "power1.out"
+        })
+    })
+
     return (
         <nav className="w-full flex items-center justify-between p-3 lg:p-4 fixed top-0 left-0 right-0 z-50 backdrop-blur-lg uppercase">
 

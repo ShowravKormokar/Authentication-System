@@ -1,4 +1,5 @@
 import BounceText from "@/components/home/BounceText";
+import DemoTerminal from "@/components/home/DemoTerminal";
 import Hero from "@/components/home/Hero";
 import TechStack from "@/components/home/TechStack";
 import Image from "next/image";
@@ -8,7 +9,8 @@ export default function Home() {
     <section className="w-full">
       <Hero />
       <TechStack />
-      <div className="h-dvh"></div>
+      <DemoTerminal />
+      {/* <div className="h-dvh"></div> */}
       <BounceText text="was it worth the recreate ?" />
     </section>
   );

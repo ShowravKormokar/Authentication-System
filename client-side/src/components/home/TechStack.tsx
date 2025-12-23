@@ -24,7 +24,7 @@ const TechStack = () => {
     });
 
     return (
-        <section id='techStackCon' className='w-[300rem] h-dvh flex justify-start items-center p-24 border border-amber-500'>
+        <section id='techStackCon' className='w-[300rem] h-dvh flex justify-start items-center p-24'>
             <div id='techStack' className='w-full h-dvh flex justify-start items-end'>
                 <div className='w-full flex justify-center items-center gap-12'>
                     <h1 className='text-[10vw] font-extrabold'>01</h1>

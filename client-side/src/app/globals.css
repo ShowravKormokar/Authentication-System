@@ -194,3 +194,8 @@ nav {
 .tranblock {
   will-change: transform;
 }
+
+/* ----------------------------- */
+.terminalBox{
+  font-family: 'Courier New', Courier, monospace;
+}

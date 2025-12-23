@@ -20,13 +20,13 @@ const Navbar = () => {
     })
 
     return (
-        <nav className="w-full flex items-center justify-between p-3 lg:p-4 fixed top-0 left-0 right-0 z-50 backdrop-blur-lg uppercase">
+        <nav className="w-full flex items-center justify-between p-3 lg:p-4 fixed top-0 left-0 right-0 z-50 uppercase">
 
             {/* Left icon */}
-            <RiAddLine className="text-foreground hidden md:inline-block" />
+            <RiAddLine className="text-foreground hidden md:inline-block rounded-full backdrop-blur-lg" />
 
             {/* Center logo with decorative icons */}
-            <div className="logo flex items-center gap-2">
+            <div className="logo flex items-center gap-2 backdrop-blur-2xl rounded-lg px-2">
                 <RiCloseLine className="text-foreground" />
                 <Link
                     href="/"
@@ -39,7 +39,7 @@ const Navbar = () => {
             </div>
 
             {/* Navigation items with dividers */}
-            <div className="nav-items lg:flex items-center gap-1 hidden">
+            <div className="nav-items lg:flex items-center gap-1 hidden backdrop-blur-2xl rounded-xl px-3">
                 <Link
                     href="/"
                     className="text-foreground px-2 font-semibold nav-Link"
@@ -93,7 +93,7 @@ const Navbar = () => {
             </div>
 
             {/* Right icon */}
-            <RiAddLine className="text-foreground hidden md:inline-block" />
+            <RiAddLine className="text-foreground hidden md:inline-block backdrop-blur-lg rounded-lg" />
         </nav>
     )
 };

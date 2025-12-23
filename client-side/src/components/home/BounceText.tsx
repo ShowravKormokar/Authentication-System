@@ -63,7 +63,7 @@ const BounceText = ({ text }: { text: string }) => {
     );
 
     return (
-        <section className="relative w-screen h-[170vh]">
+        <section className="relative w-screen h-[170vh] border border-amber-500">
             <div ref={containerRef} className="relative flex h-screen items-center overflow-hidden">
                 <h1 ref={titleRef} className="text-[15vw] font-bold whitespace-nowrap will-change-transform lg:text-[9vw]">{text}</h1>
                 <div className="absolute bottom-24 flex w-full justify-center text-center">

@@ -75,12 +75,12 @@ const HoverGrid = () => {
     }, []);
 
     return (
-        <section className="w-screen h-dvh p-16">
+        <section className="w-screen h-dvh place-items-center">
             <div
                 ref={gridConRef}
-                className="relative w-full h-full flex justify-center items-center"
+                className="container relative w-full h-full flex justify-center items-center"
             >
-                <div className="relative h-[60%] flex flex-col border-2">
+                <div className=" gridP border-2">
                     <div className="grid-rowP">
                         <div className="grid-item"><p>[ HTML ]</p></div>
                         <div className="grid-item"><p>[ CSS ]</p></div>
@@ -97,7 +97,7 @@ const HoverGrid = () => {
 
                 <div
                     ref={gridHighlightRef}
-                    className="highlight absolute top-0 left-0 pointer-events-none transition-all duration-200"
+                    className="highlight"
                 />
             </div>
         </section>

@@ -8,6 +8,7 @@ import img01 from "../../assets/images/6846415.png"
 import img02 from "../../assets/images/6850064.png"
 import img03 from "../../assets/images/6861232.png"
 import img04 from "../../assets/images/6862825.png"
+import NewYearHero from '@/components/Apis/NewYearHero';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -37,10 +38,11 @@ const Apis = () => {
 
     return (
         <main className='w-full h-full'>
-            <section className='w-screen h-dvh text-center content-center leading-[0.95]'>
+            {/* <section className='w-screen h-dvh text-center content-center leading-[0.95]'>
                 <h1 className='text-[11vw] font-extrabold'><span className='text-orange-400'>Hello</span>, World!</h1>
                 <h1 className='text-[13vw] font-extrabold text-orange-400'><del className='text-black'>2025</del>2026</h1>
-            </section>
+            </section> */}
+            <NewYearHero />
             <section className='spootlight'>
                 <div className="row">
                     <img src={img01.src} className="object-cover" alt="" />

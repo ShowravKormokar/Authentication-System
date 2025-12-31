@@ -25,7 +25,7 @@ const Apis = () => {
 
         gsap.to(path, {
             strokeDashoffset: 0,
-            ease: "none",
+            ease: "power1.inOut",
             scrollTrigger: {
                 trigger: ".spootlight",
                 start: "top 10%",
@@ -47,7 +47,7 @@ const Apis = () => {
                 <div className="row">
                     <div className="col">
                         <div className="card">
-                            <h2>Connect Your API's'</h2>
+                            <h2 className='text-[3vw] font-bold'>Connect Your API's'</h2>
                             <p>
                                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos non sunt rem? Sit beatae optio mollitia eaque! Earum, similique delectus.
                             </p>
@@ -67,7 +67,7 @@ const Apis = () => {
                     </div>
                     <div className="col">
                         <div className="card">
-                            <h2>Connect Your API's'</h2>
+                            <h2 className='text-[3vw] font-bold'>Connect Your API's'</h2>
                             <p>
                                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos non sunt rem? Sit beatae optio mollitia eaque! Earum, similique delectus.
                             </p>
@@ -86,7 +86,7 @@ const Apis = () => {
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                     >
-                        <path id="stroke-path" d="M156.268 15.2728C156.268 15.2728 28.9117 6.83196 15.6223 83.8546C2.333 160.877 204.996 93.3505 204.996 188.31C204.996 283.269 -35.3204 394.055 46.6309 257.947C128.582 121.838 121.938 393 121.938 393" stroke="black" strokeWidth="45" strokeLinecap='round' />
+                        <path id="stroke-path" d="M156.268 15.2728C156.268 15.2728 28.9117 6.83196 15.6223 83.8546C2.333 160.877 204.996 93.3505 204.996 188.31C204.996 283.269 -35.3204 394.055 46.6309 257.947C128.582 121.838 121.938 393 121.938 393" stroke="orange" strokeWidth="45" strokeLinecap='round' />
                     </svg>
                 </div>
             </section>

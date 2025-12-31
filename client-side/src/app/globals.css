@@ -353,9 +353,10 @@ nav {
   justify-content: center;
 }
 
-.spootlight .row:nth-child(1) .img,
-.spootlight .row:nth-child(4) .img {
+.spootlight .row:nth-child(1) img,
+.spootlight .row:nth-child(4) img {
   width: 50%;
+  height: 50%;
 }
 
 .spootlight .card {
@@ -371,10 +372,10 @@ nav {
 
 .spootlight .svg-path {
   position: absolute;
-  top: 25svh;
+  top: 35svh;
   left: 50%;
   transform: translate(-50%);
-  width: 90%;
+  width: 100%;
   height: 100%;
   z-index: -1;
 }
@@ -393,8 +394,8 @@ nav {
     flex-direction: column;
   }
 
-  .spootlight .row:nth-child(1) .img,
-  .spootlight .row:nth-child(4) .img {
+  .spootlight .row:nth-child(1) img,
+  .spootlight .row:nth-child(4) img {
     width: 100%;
   }
 
@@ -403,7 +404,8 @@ nav {
   }
 
   .spootlight .svg-path {
-    top: 15svh;
-    width: 275%;
+    top: 5svh;
+    width: 100%;
+    height: 110%;
   }
 }

@@ -29,7 +29,7 @@ const Apis = () => {
             scrollTrigger: {
                 trigger: ".spootlight",
                 start: "top 10%",
-                end: "bottom 180%",
+                end: "bottom 100%",
                 scrub: true,
             },
         });
@@ -37,8 +37,9 @@ const Apis = () => {
 
     return (
         <main className='w-full h-full'>
-            <section className='w-screen h-dvh text-center content-center'>
-                <h1 className='text-[11vw]'>Hello, World!</h1>
+            <section className='w-screen h-dvh text-center content-center leading-[0.95]'>
+                <h1 className='text-[11vw] font-extrabold'><span className='text-orange-400'>Hello</span>, World!</h1>
+                <h1 className='text-[13vw] font-extrabold text-orange-400'><del className='text-black'>2025</del>2026</h1>
             </section>
             <section className='spootlight'>
                 <div className="row">

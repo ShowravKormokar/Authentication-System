@@ -44,3 +44,5 @@ coverage/
 
 package.json
 package-lock.json
+
+frames/
